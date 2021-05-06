@@ -19,6 +19,8 @@ namespace PeriyodikTabloOluştur
         public string symbol { get; set; }
         [JsonProperty(PropertyName = "number")]
         public string number { get; set; }
+        [JsonProperty(PropertyName = "summary")]
+        public string summary { get; set; }
     }
     class deneme
     {
@@ -95,14 +97,20 @@ namespace PeriyodikTabloOluştur
                     symbol = i.symbol,
                     number = i.number,
                     xpos = i.xpos,
-                    ypos = i.ypos
+                    ypos = i.ypos,
+                    summary = i.summary
                 }).FirstOrDefault();
                 if (sorgu != null)
                 {
                     html += sorgu.number;
                 }
                 html += "</span>";
-                html += "<span style=\"display: block; text-align: center; font-size: 26px; \">";
+                html += "<span ";
+                if (sorgu != null)
+                {
+                    html += " title=\"" + sorgu.summary + "\"";
+                }
+                html +="style=\"display: block; text-align: center; font-size: 26px; \">";
                 if (sorgu != null)
                 {
                     html += sorgu.symbol;
