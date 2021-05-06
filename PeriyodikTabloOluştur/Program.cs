@@ -46,7 +46,13 @@ namespace PeriyodikTabloOluştur
   min-height: 37px;
   min-width: 42px;
   position: relative;
-} </style>";
+} 
+a {
+    text-decoration:none;
+    color:blue;
+    
+}
+</style>";
 
             html += "<div id=\"oyun1\">        <button type=\"radio\">Renk Yerleştirme</button>        <select name=\"renk\" id=\"\">            <option value=\"Kırmızı\">Kırmızı</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>        </select>    </div>    <div class=\"oyun2\">        <button type=\"radio\">Sembolik Adı,Adı,Atom Numarası</button>    </div>    <main>        <table style=\"margin: auto auto;border: 3px solid rgba(33, 77, 158, 0.472);border-collapse: collapse;  \">        <tbody>  ";
 
@@ -105,17 +111,17 @@ namespace PeriyodikTabloOluştur
                     html += sorgu.number;
                 }
                 html += "</span>";
-                html += "<span ";
+                html += "<a ";
                 if (sorgu != null)
                 {
-                    html += " title=\"" + sorgu.summary + "\"";
+                    html += "href=\"https://en.wikipedia.org/wiki/" + sorgu.name +"\" target='_blank'"+ " title=\"" + sorgu.summary + "\"";
                 }
                 html +="style=\"display: block; text-align: center; font-size: 26px; \">";
                 if (sorgu != null)
                 {
                     html += sorgu.symbol;
                 }
-                html += "</span>";
+                html += "</a>";
                 html += "<span style=\" display: block; font-size:13px; \">";
                 if (sorgu != null)
                 {
