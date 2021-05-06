@@ -21,6 +21,9 @@ namespace PeriyodikTabloOluştur
         public string number { get; set; }
         [JsonProperty(PropertyName = "summary")]
         public string summary { get; set; }
+        [JsonProperty(PropertyName = "cpk-hex")]
+        public string appearance { get; set; }
+        
     }
     class deneme
     {
@@ -89,14 +92,6 @@ a {
 
             for (int i = 0; i < 180; i++)
             {
-                if (yatay == 1)
-                {
-                    html += "<tr>";
-                }
-
-                html += "<th style=\"border: 2px solid red;\">";
-                html += " <div class=\"tarih\" style=\"min-height: 58px; min-width: 44px; position: relative; \">";
-                html += "<span style=\"color: red; font-size: 10px; position: absolute; top: 0; left: 0; \">";
                 MyClass? sorgu = json.Where(i => i.xpos == yatay && i.ypos == tr).Select(i => new MyClass()
                 {
                     name = i.name,
@@ -104,8 +99,34 @@ a {
                     number = i.number,
                     xpos = i.xpos,
                     ypos = i.ypos,
-                    summary = i.summary
+                    summary = i.summary,
+                    appearance = i.appearance
                 }).FirstOrDefault();
+                if (yatay == 1)
+                {
+                    html += "<tr>";
+                }
+
+                html += "<th style=\"border: 2px solid red;" ;
+                if (sorgu != null)
+                {
+                    if (sorgu.appearance != null)
+                    {
+                        html += "background-color:#";
+                        html += sorgu.appearance;
+                    }
+                    else
+                    {
+                        html += "background-color: ";
+                        html += "white";
+
+                    }
+                }
+                    
+                    html+=";\""+ ">";
+                html += " <div class=\"tarih\" style=\"min-height: 58px; min-width: 44px; position: relative; \">";
+                html += "<span style=\"color: red; font-size: 10px; position: absolute; top: 0; left: 0; \">";
+               
                 if (sorgu != null)
                 {
                     html += sorgu.number;
