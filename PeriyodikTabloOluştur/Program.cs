@@ -113,6 +113,10 @@ namespace PeriyodikTabloOluştur
                 {
                     html += sorgu.name;
                 }
+                else
+                {
+                    html += "<p class=\"görünmesin\"></p>";
+                }
                 yatay++;
                 html += "</span>";
 
@@ -170,6 +174,8 @@ namespace PeriyodikTabloOluştur
             //        }
             //}
             //buradan önceisi yorum satırı olucak
+            html += "<script>for (const iterator of document.getElementsByClassName(\"görünmesin\")) {";
+            html += "iterator.parentElement.parentElement.parentElement.style.visibility = \"hidden\";}</script>";
 
             html += "</tbody>    </table>    </main></body></html>";
         }
