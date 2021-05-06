@@ -1,6 +1,6 @@
-# Periyodik-Tablo
+# Periyodik-Tablo 
 
-Periyodik tablo projesi bir json dosyası kullanmaktadkır.
+Periyodik tablo projesi bir json dosyası kullanmaktadkır. Kanyağı şurasıdır : https://github.com/Bowserinator/Periodic-Table-JSON/blob/master/LICENSE.md
 
 # License
 
@@ -20,3 +20,4 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
