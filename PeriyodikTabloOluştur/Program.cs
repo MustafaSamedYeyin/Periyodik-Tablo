@@ -211,7 +211,12 @@ a {
             //buradan önceisi yorum satırı olucak
             html += "<script>for (const iterator of document.getElementsByClassName(\"görünmesin\")) {";
             html += "iterator.parentElement.parentElement.parentElement.style.visibility = \"hidden\";}</script>";
-
+            html += "<script>"+
+                "document.getElementsByClassName(\"görünmesin\")[36].innerText = \"57 - 71\";"+
+                "document.getElementsByClassName(\"görünmesin\")[36].parentElement.parentElement.parentElement.style.visibility = \"visible\"; "+
+                "document.getElementsByClassName(\"görünmesin\")[37].innerText = \"89 -103\"; "+
+                "document.getElementsByClassName(\"görünmesin\")[37].parentElement.parentElement.parentElement.style.visibility = \"visible\"; "+
+                "</script>";
             html += "</tbody>    </table>    </main></body></html>";
         }
     }
