@@ -23,7 +23,7 @@ namespace PeriyodikTabloOluştur
         public string summary { get; set; }
         [JsonProperty(PropertyName = "cpk-hex")]
         public string appearance { get; set; }
-        
+
     }
     class deneme
     {
@@ -55,22 +55,9 @@ a {
     color:blue;
     
 }
-      tbody {
-      counter-reset: line;
-    }
-
-    tbody tr:not(:nth-child(8)) {
-      counter-increment: line;
-    }
-
-    tbody tr:not(:nth-child(8))::before {
-      display: table-cell;
-      vertical-align: middle;
-      content: counter(line);
-    }
 </style>";
 
-            html += "<div id=\"oyun1\">        <button type=\"radio\">Renk Yerleştirme</button>        <select name=\"renk\" id=\"\">            <option value=\"Kırmızı\">Kırmızı</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>        </select>    </div>    <div class=\"oyun2\">        <button type=\"radio\">Sembolik Adı,Adı,Atom Numarası</button>    </div>    <main>        <table style=\"margin: auto auto;border-collapse: collapse;  \">        <tbody>  ";
+            html += "<div id=\"oyun1\">        <button type=\"radio\">Renk Yerleştirme</button>        <select name=\"renk\" id=\"\">            <option value=\"Kırmızı\">Kırmızı</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>        </select>    </div>    <div class=\"oyun2\">        <button type=\"radio\">Sembolik Adı,Adı,Atom Numarası</button>    </div>    <main>        <table style=\"margin: auto auto;border: 3px solid rgba(33, 77, 158, 0.472);border-collapse: collapse;  \">        <tbody>  ";
 
             var yatay = 1;
             var tr = 1;
@@ -85,7 +72,7 @@ a {
             //            xeksenisayisi = k,
             //            yekseninisayisi = i
             //        });
-                 
+
             //    }
             //}
             //for (int i = 0; i < deneme.Count; i++)
@@ -115,18 +102,12 @@ a {
                     summary = i.summary,
                     appearance = i.appearance
                 }).FirstOrDefault();
-
                 if (yatay == 1)
                 {
-                   
-                       
                     html += "<tr>";
-                    //html += "<div style=\" display:inline-block; \">" + tr + "</div>";
-
                 }
 
-                html += "<th style=\"border: 2px solid red;" ;
-                
+                html += "<th style=\"border: 2px solid red;";
                 if (sorgu != null)
                 {
                     if (sorgu.appearance != null)
@@ -141,11 +122,11 @@ a {
 
                     }
                 }
-                    
-                    html+=";\""+ ">";
+
+                html += ";\"" + ">";
                 html += " <div class=\"tarih\" style=\"min-height: 58px; min-width: 44px; position: relative; \">";
                 html += "<span style=\"color: red; font-size: 10px; position: absolute; top: 0; left: 0; \">";
-               
+
                 if (sorgu != null)
                 {
                     html += sorgu.number;
@@ -154,9 +135,9 @@ a {
                 html += "<a ";
                 if (sorgu != null)
                 {
-                    html += "href=\"https://en.wikipedia.org/wiki/" + sorgu.name +"\" target='_blank'"+ " title=\"" + sorgu.summary + "\"";
+                    html += "href=\"https://en.wikipedia.org/wiki/" + sorgu.name + "\" target='_blank'" + " title=\"" + sorgu.summary + "\"";
                 }
-                html +="style=\"display: block; text-align: center; font-size: 26px; \">";
+                html += "style=\"display: block; text-align: center; font-size: 26px; \">";
                 if (sorgu != null)
                 {
                     html += sorgu.symbol;
