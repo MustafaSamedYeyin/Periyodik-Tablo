@@ -55,9 +55,22 @@ a {
     color:blue;
     
 }
+      tbody {
+      counter-reset: line;
+    }
+
+    tbody tr:not(:nth-child(8)) {
+      counter-increment: line;
+    }
+
+    tbody tr:not(:nth-child(8))::before {
+      display: table-cell;
+      vertical-align: middle;
+      content: counter(line);
+    }
 </style>";
 
-            html += "<div id=\"oyun1\">        <button type=\"radio\">Renk Yerleştirme</button>        <select name=\"renk\" id=\"\">            <option value=\"Kırmızı\">Kırmızı</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>        </select>    </div>    <div class=\"oyun2\">        <button type=\"radio\">Sembolik Adı,Adı,Atom Numarası</button>    </div>    <main>        <table style=\"margin: auto auto;border: 3px solid rgba(33, 77, 158, 0.472);border-collapse: collapse;  \">        <tbody>  ";
+            html += "<div id=\"oyun1\">        <button type=\"radio\">Renk Yerleştirme</button>        <select name=\"renk\" id=\"\">            <option value=\"Kırmızı\">Kırmızı</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>            <option value=\"Siyah\">Siyah</option>        </select>    </div>    <div class=\"oyun2\">        <button type=\"radio\">Sembolik Adı,Adı,Atom Numarası</button>    </div>    <main>        <table style=\"margin: auto auto;border-collapse: collapse;  \">        <tbody>  ";
 
             var yatay = 1;
             var tr = 1;
@@ -102,12 +115,18 @@ a {
                     summary = i.summary,
                     appearance = i.appearance
                 }).FirstOrDefault();
+
                 if (yatay == 1)
                 {
+                   
+                       
                     html += "<tr>";
+                    //html += "<div style=\" display:inline-block; \">" + tr + "</div>";
+
                 }
 
                 html += "<th style=\"border: 2px solid red;" ;
+                
                 if (sorgu != null)
                 {
                     if (sorgu.appearance != null)
